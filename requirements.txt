@@ -7,3 +7,7 @@ pymongo
 dnspython
 # --- For-Web-Response ------- #
 aiohttp
+
+flask==2.2.2
+gunicorn==20.1.0
+aiohtpp==3.8.1
