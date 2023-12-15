@@ -62,7 +62,6 @@ async def start_command(client: Client, message: Message):
             await message.reply_text("Something went wrong..!")
             return
         await temp_msg.delete()
-        await asyncio.sleep(10)
 
         for msg in messages:
 
@@ -83,6 +82,8 @@ async def start_command(client: Client, message: Message):
                 await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
             except:
+                await asyncio.sleep(10)
+                await messages.delete()
                 pass
         return
     else:
